@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%; /* Make sure the body and html elements fill the viewport */
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #444;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column; /* Ensures content is arranged vertically */
+}
+
+nav {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.login_text {
+    justify-self: start;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    justify-self: end;
+}
+
+.user_id, .user_password{
+    border: none;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#receipient, #amount, #loan_amount, #close_account, #confirm_user, #confirm_pin{
+    border: none;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.login_arrow {
+    cursor: pointer;
+}
+
+label {
+    font-size: 12px;
+    align-self: flex-end;
+}
+
+.container {
+    height: 100%; /* Ensure the container fills the full height */
+    display: grid;
+    grid-template-areas: 
+        '. current_BalanceL current_BalanceL current_BalanceL current_BalanceO .'
+        '. entries entries entries transfer_money .'
+        '. entries entries entries request_loan .'
+        '. entries entries entries close_account .'
+        '. credit_amount debit_amount interest_amount logout .';
+    grid-template-columns: repeat(6, 1fr); /* Create 6 equal-width columns */
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.entries {
+    grid-area: entries;
+    height : 400px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.transfer_money {
+    display: flex;
+    grid-area: transfer_money;
+    background-color: #FFC72C;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-top: 20px;
+    row-gap: 15px;
+}
+
+
+.request_loan {
+    grid-area: request_loan;
+    background-color: #32de84;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.loan_form{
+    align-self: self-start;
+}
+
+.close_account {
+    grid-area: close_account;
+    background-color: #ff585f;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.transfer_arrow, .request_loan_arrow, .close_account_arrow{
+    background-color: white;
+    height: 30px;
+    width: 50px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+.amount_class{
+    display: flex;
+    align-self: center;
+}
+
+h4{
+    display: flex;
+    align-self: flex-start;
+}
+
+.loan_form{
+    display: flex;
+    gap:20px;
+}
+
+.loan_class{
+    display: flex;
+    align-self: center;
+}
+
+.close_accountl{
+    display: flex;
+    align-self: center;
+} 
+
+.current_BalanceL {
+    grid-area: current_BalanceL;
+    display: flex;
+    justify-self: flex-start;
+    align-self: center;
+    flex-direction: column;
+}
+
+.current_BalanceO {
+    grid-area: current_BalanceO;
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+    font-size: 40px;
+}
+
+.credit_amount{
+    grid-area: credit_amount;
+}
+
+.debit_amount{
+    grid-area: debit_amount;
+}
+
+.interest_amount{
+    grid-area: interest_amount;
+    flex-direction: row;
+}
+
+.logout{
+    grid-area: logout;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logout_c{
+    display: flex;
+    font-size: 12px;
+    flex-direction: row;
+}
+
+.currentBalanceL{
+    font-size: 25px;
+}
+
+.currentDateL{
+    align-self: flex-start;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.entry{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border-bottom: 1px #C8C8C8 solid;
+    height: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 20px;
+}
+
+.entry_amount{
+    margin-left: auto;
+}
+
+.deposit{
+    background-color: #32de84;
+    border-radius: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.withdrawl{
+    background-color: red;
+    border-radius: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.sort label,
+.sort p {
+    display: inline-flex;
+}
+
+
+
+
+
