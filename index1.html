@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Bankist</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<nav>
+    <p class="login_text">Login to get started</p>
+    <img src="logo.png" alt="logo_class">
+    <form class="login">
+        <input type="text" placeholder="user" class="user_id">
+        <input type="number" placeholder="PIN" class="user_password">
+        <p class="login_arrow">&rarr;</p>
+    </form>
+</nav>
+
+
+<!-- body{
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    'header header header'
+    'nav content aside'
+    'nav footer footer'
+    ;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 0.5fr 3fr 0.5fr;
+} -->
+
+<main class="hidden">
+    <div class="container">
+        <div class="current_BalanceL">
+            <label for="currentBalance" class="currentBalanceL">Current Balance</label>
+            <label for="currentDate" class="currentDateL">As of: <span id="date"></span></label>
+        </div> 
+
+        <div class="current_BalanceO">
+            <output class="currentBalance">$0000</output>
+        </div>
+       
+
+        <div class="transfer_money">
+            
+            <h4>Transfer money</h4>
+            <form class="transfer_form">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input id="receipient" type="text" >
+                        <label for="receipient" class="amount_class">Transfer to</label>
+                    </div>
+        
+                    <div class="form-group">
+                        <input id="amount" type="number" min="1">
+                        <label for="transfer_amount" class="amount_class">Amount</label>
+                    </div>
+                    <p class="transfer_arrow" onclick="handleTransaction('WITHDRAWL')">&rarr;</p>
+                </div>
+                
+                
+                
+            </form>
+        </div>
+
+        
+        <div class="request_loan">
+            <h4>Request Loan</h4>
+            <form class="loan_form">
+            <div class="form-row">
+                <div class="form-group">
+                    <input id="loan_amount" type="number" min="1">
+                    <label for="loan_amount" class="loan_class">Request loan</label>
+                    
+                </div>
+                <p class="request_loan_arrow" onclick="handleTransaction('DEPOSIT')" style="cursor: pointer;">&rarr;</p>
+            </div>
+            </form>
+        </div>
+
+        <div class="close_account">
+            <h4>Close Account</h4>
+            <form class="close_form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input id="confirm_user" type="text">
+                        <label for="confirm_user" class="close_accountl">Confirm User</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input id="confirm_pin" type="text">
+                        <label for="confirm_pin" class="close_accountl">Confirm PIN</label>
+        
+                    </div>
+                <p class="close_account_arrow">&rarr;</p>
+        </div>
+    </form>
+        </div>
+
+        <div class="entries"> 
+            <div class="entry">
+                <div class="entry_type deposit">Deposit</div>
+                <div class="entry1_date">12/03/2022</div>
+                <div class="entry_amount">1300$</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry_type withdrawl">Withdrawl</div>
+                <div class="entry1_date">12/04/2022</div>
+                <div class="entry_amount">-130$</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry_type deposit">Deposit</div>
+                <div class="entry1_date">12/05/2022</div>
+                <div class="entry_amount">1300$</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry_type withdrawl">Withdrawl</div>
+                <div class="entry1_date">12/06/2022</div>
+                <div class="entry_amount">-1300$</div>
+            </div>
+        </div>
+
+    <div class="credit_amount">
+        <label for="credit" class="credit_c">IN</label>
+        <output class="credit_o">$0000</output>
+    </div>
+
+    <div class="debit_amount">
+        <label for="debit" class="debit_c">OUT</label>
+        <output class="debit_o">$0000</output>
+    </div>
+
+    <div class="interest_amount">
+        <label for="interest" class="interest">INTEREST</label>
+        <output class="interest_o">$0000</output>
+    </div>  
+
+    <div class="logout">
+        <div class="sort">
+            <label for="sorting" class="sorting_c">SORT</label>
+            <p class="sorting_a" onclick="toggleSort()" style="cursor: pointer;">&uarr;</p>
+        </div>
+
+        <div class="logout_c">
+            <div id="countdown"></div>
+        </div>
+    </div>
+
+    </div>
+</main>
+<body>
+    <script src="script1.js"></script>
+</body>
+</html>
